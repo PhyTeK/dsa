@@ -1,3 +1,21 @@
+#include <stdio.h>
+#include <time.h>
+int fun1(int n){
+  int i,j;
+  for(i=0;i<n;i++)   // O(n+1)
+    j=1;             // O(n)
+  return 0;
+}
+
+int fun2(int n){
+  int i,j,k;
+  for(i=0;i<n;i++)   // O(n+1)
+    for(j=0;j<n;j++)
+      k=1;             // O(n)
+  return 0;
+}
+
+
 #define MAX 20000
 
 int main(){
@@ -9,7 +27,7 @@ int main(){
   for (i=0;i<MAX;i+=100){
 
     t = clock();  // Initialize t to the current clock per sec/time
-    fun1(i);
+    fun2(i);
     t=clock()-t;
     
     if(i%1000 == 0){
